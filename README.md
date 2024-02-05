@@ -29,7 +29,7 @@ most important part. Add your answer to this markdown file.
 
 ### Response
 
-Ignoring constant factors, the final $\Theta$ complexity of $T(n)$ is $\Theta = log(n)$.
+Ignoring constant factors, the final $\Theta$ complexity of $T(n)$ is $\Theta(n)$.
 
 The recurrence relation for this function is as follows:<br>
 $T(n) = n$, if $n < 3$<br>
