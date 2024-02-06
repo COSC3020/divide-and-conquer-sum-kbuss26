@@ -35,8 +35,8 @@ The recurrence relation for this function is as follows:<br>
 $T(n) = 1$, if $n < 3$<br>
 $T(n) = 3T(n/3) + n$, otherwise<br>
 
-In the base case, all of the numbers in the array of $n < 3$ are summed because they cannot
-be divided into three sections. Thus, the relation is $T(n) = n$.
+In the base case, either one or two constant operations are performed in the array of $n < 3$ 
+because they cannot be divided into three sections. Thus, the relation is $T(n) = 1$.
 
 The recursive case is when $n >= 3$, where three (roughly) equal partitions for n are each
 called with the same function, ignoring constant operations. Then, the numbers in the new
