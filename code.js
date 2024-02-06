@@ -1,7 +1,7 @@
 /*
     Keifer Buss 
     COSC-3020-01 
-    Last modified Jan. 29 2024
+    Last modified Feb. 06 2024
     Sources: 
     - https://stackoverflow.com/questions/32380989/how-do-i-display-the-base-of-logarithms-in-markdown#:~:text=The%20base%20of%20a%20logarithm%20is%20displayed%20as%20a%20subscript,displays%20log2(n).&text=this%20is%20the%20proper%20way%20to%20use%20log%20in%20markdown.,-%24log%7B_a
 */
@@ -37,6 +37,10 @@ function sumList(b) {
     switch(l) {
         case 0:
             return 0;
+        case 1:
+            return b[0];
+        case 2:
+            return b[0] + b[1];
         default:
             return b[0] + sumList(b.slice(1,l));
     }
