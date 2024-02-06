@@ -29,31 +29,31 @@ most important part. Add your answer to this markdown file.
 
 ### Response
 
-Ignoring constant factors, the final $\Theta$ complexity of $T(n)$ is $\Theta(n)$.
+Ignoring constant factors, the final $\Theta$ complexity of $T(n)$ is $\Theta(n {log}(n))$.
 
 The recurrence relation for this function is as follows:<br>
-$T(n) = n$, if $n < 3$<br>
-$T(n) = 3T(n/3)$, otherwise<br>
+$T(n) = 1$, if $n < 3$<br>
+$T(n) = 3T(n/3) + n$, otherwise<br>
 
 In the base case, all of the numbers in the array of $n < 3$ are summed because they cannot
 be divided into three sections. Thus, the relation is $T(n) = n$.
 
 The recursive case is when $n >= 3$, where three (roughly) equal partitions for n are each
-called with the same function, ignoring constant operations. It is important to note that each
-iterative loop bound is defined by the function, not the input. Therefore, the iterations are
-constant as well.
+called with the same function, ignoring constant operations. Then, the numbers in the new
+array are summed, adding n to the recursive case.
 
 Solving for $T(n)$, we get that<br>
-$T(n) = 3T(n/3)$<br>
-$= 3(3T(n/9))$<br>
-$= 9T(n/9)$<br>
-$= 9(3T(n/27))$<br>
-$= 27T(n/27)$<br>
+$T(n) = 3T(n/3)+n$<br>
+$= 3(3T(n/9)+n/3)+n$<br>
+$= 9T(n/9)+2n$<br>
+$= 9(3T(n/27)+n/9)+2n$<br>
+$= 27T(n/27)+3n$<br>
 $= ...$<br>
-$= 3^iT(n/(3^i))$<br>
+$= 3^iT(n/(3^i))+in$<br>
 
 for $i = log{_3}n$,<br>
-$= nT(1)$<br>
-$= n\in\Theta(n)$<br>
+$= nT(1)+n{log}{_3}n$<br>
+$= n+n{log}{_3}n\in\Theta(n {log}(n))$<br>
 
-Therefore, I believe T(n) for this algorithm is $\Theta(n).$
+Therefore, I believe T(n) for this algorithm is $\Theta(n {log}(n)).$
+
