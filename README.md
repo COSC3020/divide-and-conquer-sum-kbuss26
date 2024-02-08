@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/E1vcEWuv)
 # Divide and Conquer Sum
 
 In the lectures, we've covered merge sort, which uses a divide-and-conquer
@@ -25,3 +26,36 @@ and solve it as we did in the lectures. Give the final $\Theta$ complexity.
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+### Response
+
+Ignoring constant factors, the final $\Theta$ complexity of $T(n)$ is $\Theta(n)$.
+
+The recurrence relation for this function is as follows:<br>
+$T(n) = 1$, if $n < 3$<br>
+$T(n) = 3T(n/3) + 3$, otherwise<br>
+
+In the base case, either one or two constant operations are performed in the array of $n < 3$ 
+because they cannot be divided into three sections. Thus, the relation is $T(n) = 1$.
+
+The recursive case is when $n >= 3$, where three (roughly) equal partitions for n are each
+called with the same function, ignoring constant operations. Then, the numbers in the new
+array are summed with no greater than 3 operations, leaving a constant number of operations
+(3) defined by the set bounds previously.
+
+Solving for $T(n)$, we get that<br>
+$T(n) = 3T(n/3) + 3$<br>
+$= 3(3T(n/9)+3)+3$<br>
+$= 9T(n/9)+12$<br>
+$= 9(3T(n/27)+3)+12$<br>
+$= 27T(n/27)+39$<br>
+$= ...$<br>
+$= 3^iT(n/(3^i))+C$<br>
+
+for $i = log{_3}n$,<br>
+$= nT(1)+C$<br>
+$= n+C\in\Theta(n)$<br>
+
+Therefore, I believe $T(n)$ for this algorithm is $\Theta(n).$
+
+(Help with figuring out the constant number for merging sums received from Ali Torabi; special thanks to him)
