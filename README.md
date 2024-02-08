@@ -33,7 +33,7 @@ Ignoring constant factors, the final $\Theta$ complexity of $T(n)$ is $\Theta(n)
 
 The recurrence relation for this function is as follows:<br>
 $T(n) = 1$, if $n < 3$<br>
-$T(n) = 3T(n/3)n + 3$, otherwise<br>
+$T(n) = 3T(n/3) + 3$, otherwise<br>
 
 In the base case, either one or two constant operations are performed in the array of $n < 3$ 
 because they cannot be divided into three sections. Thus, the relation is $T(n) = 1$.
@@ -56,6 +56,6 @@ for $i = log{_3}n$,<br>
 $= nT(1)+C$<br>
 $= n+C\in\Theta(n)$<br>
 
-Therefore, I believe T(n) for this algorithm is $\Theta(n).$
+Therefore, I believe $T(n)$ for this algorithm is $\Theta(n).$
 
 (Help with figuring out the constant number for merging sums received from Ali Torabi; special thanks to him)
